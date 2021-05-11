@@ -11,12 +11,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    peeps = [
-      'Hi! First Peep',
-      'Way better than Twitter',
-      'Covfefe'
-    ]
-    peeps.join
+    @peeps = Peep.all
+    erb :'peeps/index'
   end
 
   run! if app_file == $0
