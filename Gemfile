@@ -2,7 +2,11 @@
 
 source "https://rubygems.org"
 
+gem 'capybara'
+gem 'rspec'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'rspec'
-gem 'capybara'
+
+group :development, :test do
+  gem "rubocop", "0.79.0"
+end
