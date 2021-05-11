@@ -7,6 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
+    peeps = Peep.all
     'Peeps'
   end
 
