@@ -7,8 +7,16 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    peeps = Peep.all
     'Peeps'
+  end
+
+  get '/peeps' do
+    peeps = [
+      'Hi! First Peep',
+      'Way better than Twitter',
+      'Covfefe'
+    ]
+    peeps.join
   end
 
   run! if app_file == $0
