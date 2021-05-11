@@ -5,9 +5,8 @@ class Peep
 
   def self.all
     con = PG.connect :dbname => 'chitter', :user => 'annie'
-    rs = con.exec "SELECT * FROM peeps;"
-    @peeps = []
-    rs.map do |row|
+    result = con.exec "SELECT * FROM peeps;"
+    result.map do |row|
       row['text']
     end
   end

@@ -5,7 +5,7 @@ feature 'Viewing peeps' do
   end
 
   scenario 'visiting the Peeps page' do
-    visit '/peeps' 
+    visit '/peeps'
     expect(page).to have_content('Covfefe')
   end
 end
