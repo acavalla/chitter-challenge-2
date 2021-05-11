@@ -12,7 +12,7 @@ describe Peep do
   describe '.all' do
     it 'lists all Peeps' do
       peeps = Peep.all
-      expect(peeps.length).to eq 3
+      expect(peeps.length).to eq 4
       expect(peeps).to include 'Covfefe'
     end
   end

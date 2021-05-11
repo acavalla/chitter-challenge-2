@@ -1,6 +1,16 @@
 #chitter-challenge
 ![language-ruby](https://img.shields.io/badge/language-ruby-red) ![version-2.7.2](https://img.shields.io/badge/version-2.7.2-yellow)
  <!-- ![coverage-score](https://img.shields.io/badge/coverage-100%-blue) ![build](https://img.shields.io/badge/build-passing-brightgreen) -->
+
+This is a small Twitter clone webapp.
+
+1) Connect to `psql`
+2) Create the database using the psql command `CREATE DATABASE chitter;`
+3) Connect to the database with `\c chitter;`
+4) Run the query we have saved in the file `01_create_bookmarks_table.sql`
+
+
+
 Aspects of the chitter challenge
 
 - MVC
