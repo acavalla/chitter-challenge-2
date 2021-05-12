@@ -22,4 +22,12 @@ describe Peep do
       expect(peeps[2]).to include 'Very stable genius'
     end
   end
+
+  describe '.create' do
+    it 'creates a new Peep in the database' do
+      Peep.create(text: 'Try to create')
+      peeps = Peep.all
+      expect(peeps[0]).to include 'Try to create'
+    end
+  end
 end

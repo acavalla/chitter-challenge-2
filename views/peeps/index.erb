@@ -1,4 +1,10 @@
-
+<form action="/peeps" method="post">
+  <label for="peep">
+    What would you like to peep?
+    <input type="text" name="peep">
+  </label>
+  <input type="submit" value="Peep!">
+</form>
 <ul>
   <% @peeps.each do |peep| %>
     <li><%= peep %></li>

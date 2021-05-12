@@ -12,6 +12,11 @@ class Chitter < Sinatra::Base
     'Peeps'
   end
 
+  post '/peeps' do
+    Peep.create(text: params['peep'])
+    redirect '/peeps'
+  end
+
   get '/peeps' do
     @peeps = Peep.all
     erb :'peeps/index'
