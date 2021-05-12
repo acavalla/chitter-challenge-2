@@ -11,6 +11,6 @@ feature 'Viewing peeps' do
     connection.exec("INSERT INTO peeps (text) VALUES('Way better than Twitter');")
     visit '/peeps'
     expect(page).to have_content('Covfefe')
-    # expect(page).to have_content('2021-05-12 11:59:45')
+    expect(page).to have_content('First Peep')
   end
 end
