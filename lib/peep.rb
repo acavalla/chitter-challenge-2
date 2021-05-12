@@ -4,7 +4,11 @@ class Peep
   end
 
   def self.all
-    con = PG.connect :dbname => 'chitter', :user => 'annie'
+    if ENV['ENVIRONMENT'] == 'test'
+      con = PG.connect(dbname: 'chitter_test')
+    else
+      con = PG.connect :dbname => 'chitter', :user => 'annie'
+    end
     result = con.exec "SELECT * FROM peeps;"
     result.map do |row|
       row['text'] + " " + row['created_at']

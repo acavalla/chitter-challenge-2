@@ -5,9 +5,10 @@
 This is a small Twitter clone webapp.
 
 1) Connect to `psql`
-2) Create the database using the psql command `CREATE DATABASE chitter;`
-3) Connect to the database with `\c chitter;`
-4) Run the query we have saved in the file `01_create_bookmarks_table.sql`
+2) Create the database and test database `CREATE DATABASE chitter;`
+`CREATE DATABASE chitter_test;`
+
+3) Connect to the each database and run the query we have saved in the file `01_create_bookmarks_table.sql`
 
 
 
