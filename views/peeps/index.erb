@@ -7,6 +7,6 @@
 </form>
 <ul>
   <% @peeps.reverse_each do |peep| %>
-    <li><%= peep.text %></li>
+    <li><%= peep.text %><%= peep.time %></li>
   <% end %>
 </ul>
