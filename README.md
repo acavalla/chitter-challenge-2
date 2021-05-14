@@ -8,7 +8,7 @@ This is a small Twitter clone webapp.
 2) Create the database and test database `CREATE DATABASE chitter;`
 `CREATE DATABASE chitter_test;`
 
-3) Connect to the each database and run the query we have saved in the file `01_create_bookmarks_table.sql`
+3) Connect to each database and run the query we have saved in the file `01_create_bookmarks_table.sql`
 
 
 
