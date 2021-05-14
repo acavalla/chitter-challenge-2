@@ -14,16 +14,16 @@ class Peep
     result = con.exec "SELECT * FROM peeps;"
     result.map do |row|
       Peep.new(text: row['text'],
-               time: DateTime.parse(row['created_at']))
+               time: Time.parse(row['created_at']))
     end
   end
 
-  def self.create(text:)
+  def self.create(text:, time: Time.now)
     if ENV['ENVIRONMENT'] == 'test'
       con = PG.connect(dbname: 'chitter_test')
     else
       con = PG.connect(dbname: 'chitter')
     end
-    result = con.exec "INSERT INTO peeps (text) VALUES ('#{text}')"
+    result = con.exec "INSERT INTO peeps (text, created_at) VALUES ('#{text}', '#{time}')"
   end
 end

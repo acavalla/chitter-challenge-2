@@ -1,6 +1,10 @@
 require './lib/peep.rb'
+require 'timecop'
 
 describe Peep do
+  before do
+    Timecop.freeze(DateTime.now)
+  end
 
   describe '.new' do
     it 'makes a new peep' do
@@ -27,7 +31,16 @@ describe Peep do
       con.exec("INSERT INTO peeps (text) VALUES ('First Peep :)')")
       con.exec("INSERT INTO peeps (text) VALUES ('Very stable genius')")
       peeps = Peep.all
-      expect(peeps[0].time).to be_a(DateTime)
+      expect(peeps[0].time).to be_a(Time)
+    end
+
+    it 'saves the time' do
+      con = PG.connect(dbname: 'chitter_test')
+      con.exec("INSERT INTO peeps (text) VALUES ('Covfefe')")
+      con.exec("INSERT INTO peeps (text) VALUES ('First Peep :)')")
+      con.exec("INSERT INTO peeps (text) VALUES ('Very stable genius')")
+      peeps = Peep.all
+      expect(peeps[0].time.to_i).to eq Time.now().to_i
     end
   end
 

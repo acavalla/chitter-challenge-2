@@ -12,5 +12,6 @@ feature 'Viewing peeps' do
     visit '/peeps'
     expect(page).to have_content('Covfefe')
     expect(page).to have_content('First Peep')
+    # expect(page).to have_content(Time.now)
   end
 end
