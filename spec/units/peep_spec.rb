@@ -1,5 +1,6 @@
 require './lib/peep.rb'
 require 'timecop'
+require 'database_helpers'
 
 describe Peep do
   before do
@@ -45,7 +46,9 @@ describe Peep do
   describe '.create' do
     it 'creates a new Peep in the database' do
       peep = Peep.create(text: 'Try to create')
+      persisted_peep = persisted_data(id: peep.id)
       expect(peep.text).to eq 'Try to create'
+      expect(peep.id).to eq persisted_peep['id']
     end
   end
 end
