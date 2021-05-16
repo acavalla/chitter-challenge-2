@@ -13,8 +13,8 @@ class Peep
     end
     result = con.exec "SELECT * FROM peeps;"
     result.map do |row|
-      Peep.new(text: row['text'],
-               time: Time.parse(row['created_at']))
+      new(text: row['text'],
+          time: Time.parse(row['created_at']))
     end
   end
 
