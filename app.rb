@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/peep'
 require 'pg'
+require './database_connection_setup'
 
 class Chitter < Sinatra::Base
   enable :sessions, :method_override
