@@ -37,7 +37,7 @@ describe Peep do
       Peep.create(text: 'First Peep :)')
       Peep.create(text: 'Very stable genius')
       peeps = Peep.all
-      expect(peeps[0].time.to_i).to be_within(1).of Time.now().to_i
+      expect(peeps[0].time.to_i).to eq Time.now().to_i
     end
   end
 
