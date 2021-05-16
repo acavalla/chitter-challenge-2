@@ -8,18 +8,19 @@ describe Peep do
 
   describe '.new' do
     it 'makes a new peep' do
-      peep = Peep.new(text:'Hi!', time:Time.now)
+      peep = Peep.new(text:'Hi!', time:Time.now, id: 1)
       expect(peep).to be_a(Peep)
     end
   end
 
   describe '.all' do
     it 'lists all Peeps' do
-      Peep.create(text: 'Covfefe')
+      peep = Peep.create(text: 'Covfefe')
       Peep.create(text: 'First Peep :)')
       Peep.create(text: 'Very stable genius')
       peeps = Peep.all
       expect(peeps[0].text).to eq 'Covfefe'
+      expect(peeps[0].id).to eq peep.id
       expect(peeps[1].text).to eq 'First Peep :)'
       expect(peeps[2].text).to eq 'Very stable genius'
     end
@@ -43,9 +44,8 @@ describe Peep do
 
   describe '.create' do
     it 'creates a new Peep in the database' do
-      Peep.create(text: 'Try to create')
-      peeps = Peep.all
-      expect(peeps[0].text).to eq 'Try to create'
+      peep = Peep.create(text: 'Try to create')
+      expect(peep.text).to eq 'Try to create'
     end
   end
 end
