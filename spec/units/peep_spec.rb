@@ -8,17 +8,16 @@ describe Peep do
 
   describe '.new' do
     it 'makes a new peep' do
-      peep = Peep.new(text:'Hi!', time:DateTime.now)
+      peep = Peep.new(text:'Hi!', time:Time.now)
       expect(peep).to be_a(Peep)
     end
   end
 
   describe '.all' do
     it 'lists all Peeps' do
-      con = PG.connect(dbname: 'chitter_test')
-      con.exec("INSERT INTO peeps (text) VALUES ('Covfefe')")
-      con.exec("INSERT INTO peeps (text) VALUES ('First Peep :)')")
-      con.exec("INSERT INTO peeps (text) VALUES ('Very stable genius')")
+      Peep.create(text: 'Covfefe')
+      Peep.create(text: 'First Peep :)')
+      Peep.create(text: 'Very stable genius')
       peeps = Peep.all
       expect(peeps[0].text).to eq 'Covfefe'
       expect(peeps[1].text).to eq 'First Peep :)'
@@ -26,19 +25,17 @@ describe Peep do
     end
 
     it 'converts time into a DateTime object' do
-      con = PG.connect(dbname: 'chitter_test')
-      con.exec("INSERT INTO peeps (text) VALUES ('Covfefe')")
-      con.exec("INSERT INTO peeps (text) VALUES ('First Peep :)')")
-      con.exec("INSERT INTO peeps (text) VALUES ('Very stable genius')")
+      Peep.create(text: 'Covfefe')
+      Peep.create(text: 'First Peep :)')
+      Peep.create(text: 'Very stable genius')
       peeps = Peep.all
       expect(peeps[0].time).to be_a(Time)
     end
 
     it 'saves the time' do
-      con = PG.connect(dbname: 'chitter_test')
-      con.exec("INSERT INTO peeps (text) VALUES ('Covfefe')")
-      con.exec("INSERT INTO peeps (text) VALUES ('First Peep :)')")
-      con.exec("INSERT INTO peeps (text) VALUES ('Very stable genius')")
+      Peep.create(text: 'Covfefe')
+      Peep.create(text: 'First Peep :)')
+      Peep.create(text: 'Very stable genius')
       peeps = Peep.all
       expect(peeps[0].time.to_i).to be_within(1).of Time.now().to_i
     end
