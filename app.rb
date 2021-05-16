@@ -4,6 +4,8 @@ require './lib/peep'
 require 'pg'
 
 class Chitter < Sinatra::Base
+  enable :sessions, :method_override
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -17,10 +19,10 @@ class Chitter < Sinatra::Base
     redirect '/peeps'
   end
 
-  # delete '/peeps' do
-  #   Peep.delete(text: params['id'])
-  #   redirect '/peeps'
-  # end
+  delete '/peeps/:id' do
+    Peep.delete(id: params['id'])
+    redirect '/peeps'
+  end
 
   get '/peeps' do
     @peeps = Peep.all

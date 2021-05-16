@@ -4,6 +4,7 @@ feature 'Deleting peeps' do
     visit '/peeps'
     # expect(page).to have_text('Delete')
     click_on('Delete')
+    expect(current_path).to eq '/peeps'
     expect(page).not_to have_content('Dummy peep')
   end
 end
