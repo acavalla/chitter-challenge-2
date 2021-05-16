@@ -5,7 +5,11 @@
 This is a small Twitter clone webapp.
 
 To run:
-1) Set up the databases with `rake setup`
+1) Clone this repo
+2) Run `bundle install`
+3) Set up the databases with `rake setup`
+4) Run the test suite with `rspec`
+5) Run the app with `rackup config.ru` to write and delete Peeps
 
 
 
