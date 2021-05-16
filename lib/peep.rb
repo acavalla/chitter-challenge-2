@@ -34,4 +34,13 @@ class Peep
         time: Time.parse(result['created_at']),
         id: result['id'])
   end
+
+  def self.delete(id:)
+    if ENV['ENVIRONMENT'] == 'test'
+      con = PG.connect(dbname: 'chitter_test')
+    else
+      con = PG.connect(dbname: 'chitter')
+    end
+    result = con.exec "DELETE FROM peeps WHERE id = #{id} RETURNING id, text, created_at"
+  end
 end
