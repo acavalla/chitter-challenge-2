@@ -1,4 +1,5 @@
 require 'time'
+require 'database_connection'
 
 class Peep
   attr_reader :time, :text, :id
@@ -18,14 +19,13 @@ class Peep
   end
 
   def self.create(text:, time: Time.now)
-    result = DatabaseConnection.query("INSERT INTO peeps (text, created_at) VALUES ('#{text}', '#{time}') RETURNING id, text, created_at")
-    result = result.first
+    result = DatabaseConnection.query("INSERT INTO peeps (text, created_at) VALUES ('#{text}', '#{time}') RETURNING id, text, created_at").first
     new(text: result['text'],
         time: Time.parse(result['created_at']),
         id: result['id'])
   end
 
   def self.delete(id:)
-    result = DatabaseConnection.query("DELETE FROM peeps WHERE id = #{id} RETURNING id, text, created_at")
+    DatabaseConnection.query("DELETE FROM peeps WHERE id = #{id} RETURNING id, text, created_at")
   end
 end

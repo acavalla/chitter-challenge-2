@@ -9,7 +9,7 @@ describe Peep do
 
   describe '.new' do
     it 'makes a new peep' do
-      peep = Peep.new(text:'Hi!', time:Time.now, id: 1)
+      peep = Peep.new(text: 'Hi!', time: Time.now, id: 1)
       expect(peep).to be_a(Peep)
     end
   end
