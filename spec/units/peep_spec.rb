@@ -49,6 +49,17 @@ describe Peep do
       persisted_peep = persisted_data(id: peep.id)
       expect(peep.text).to eq 'Try to create'
       expect(peep.id).to eq persisted_peep['id']
+      expect(peep.time).to be_a(Time)
+    end
+  end
+
+  describe '.delete' do
+    it 'deletes a Peep from the database' do
+      peep = Peep.create(text: 'Try to create')
+      Peep.delete(id: 1)
+      persisted_peep = persisted_data(id: peep.id)
+      expect(peep.text).to eq 'Try to create'
+      expect(peep.id).to eq persisted_peep['id']
     end
   end
 end

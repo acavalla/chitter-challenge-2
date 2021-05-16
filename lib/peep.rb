@@ -29,7 +29,7 @@ class Peep
     result = con.exec "INSERT INTO peeps (text, created_at) VALUES ('#{text}', '#{time}') RETURNING id, text, created_at"
     result = result.first
     new(text: result['text'],
-        time: result['time'],
+        time: Time.parse(result['created_at']),
         id: result['id'])
   end
 end
