@@ -1,3 +1,5 @@
+require 'time'
+
 class Peep
   attr_reader :time, :text, :id
   def initialize(text:, time:, id:)
