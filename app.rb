@@ -17,6 +17,11 @@ class Chitter < Sinatra::Base
     redirect '/peeps'
   end
 
+  # delete '/peeps' do
+  #   Peep.delete(text: params['id'])
+  #   redirect '/peeps'
+  # end
+
   get '/peeps' do
     @peeps = Peep.all
     erb :'peeps/index'

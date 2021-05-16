@@ -7,6 +7,12 @@
 </form>
 <ul>
   <% @peeps.reverse_each do |peep| %>
-    <li><%= peep.text %> <%= peep.time.strftime('%H:%M, %b %d %Y') %></li>
+    <li><%= peep.text %> <%= peep.time.strftime('%H:%M, %b %d %Y') %></br>
+      <form action="/peeps" method="delete">
+        <label for=<%=peep.id%>>
+          <input type="submit" value="Delete">
+        </label>
+        </form>
+    </li>
   <% end %>
 </ul>
