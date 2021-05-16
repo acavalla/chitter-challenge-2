@@ -4,11 +4,8 @@
 
 This is a small Twitter clone webapp.
 
-1) Connect to `psql`
-2) Create the database and test database `CREATE DATABASE chitter;`
-`CREATE DATABASE chitter_test;`
-
-3) Connect to each database and run the query we have saved in the file `01_create_bookmarks_table.sql`
+To run:
+1) Set up the databases with `rake setup`
 
 
 
