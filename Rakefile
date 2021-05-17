@@ -1,6 +1,6 @@
 require 'pg'
 
-task default: %w[setup, setup_test_database]
+task default: %w[setup_test_database]
 
 task :setup_test_database do
   p "Setting up test database..."
