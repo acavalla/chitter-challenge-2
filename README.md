@@ -1,5 +1,5 @@
 #chitter-challenge
-![language-ruby](https://img.shields.io/badge/language-ruby-red) ![version-2.7.2](https://img.shields.io/badge/version-2.7.2-yellow)
+![language-ruby](https://img.shields.io/badge/language-ruby-red) ![version-2.7.2](https://img.shields.io/badge/version-2.7.2-yellow) ![build-passing](https://travis-ci.com/acavalla/chitter-challenge-2.svg?branch=master)
  <!-- ![coverage-score](https://img.shields.io/badge/coverage-100%-blue) ![build](https://img.shields.io/badge/build-passing-brightgreen) -->
 
 This is a small Twitter clone webapp.
