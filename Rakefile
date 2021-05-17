@@ -1,12 +1,6 @@
 require 'pg'
 
-task default: %w[setup_test_database]
-
-task :setup_test_database do
-  p "Setting up test database..."
-  connection = PG.connect(dbname: 'chitter_test')
-  connection.exec("TRUNCATE peeps, users;")
-end
+# task default: %w[setup_test_database]
 
 task :setup do
   p "Creating databases..."
@@ -19,4 +13,10 @@ task :setup do
     connection.exec("ALTER TABLE peeps ADD COLUMN created_at timestamp DEFAULT NOW();")
     connection.exec("CREATE TABLE users(id SERIAL PRIMARY KEY, email VARCHAR(180) NOT NULL, password VARCHAR(25) NOT NULL);")
   end
+end
+
+task :setup_test_database do
+  p "Setting up test database..."
+  connection = PG.connect(dbname: 'chitter_test')
+  connection.exec("TRUNCATE peeps, users;")
 end
