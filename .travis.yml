@@ -2,7 +2,10 @@ language: ruby
 
 services:
   - postgresql
-  
+
 script:
   - bundle exec rake setup
   - bundle exec rspec
+
+env:
+  - CODECOV_TOKEN='35039459-02ce-41b7-b0f1-413bb57cde1d'
