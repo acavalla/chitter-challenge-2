@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem 'codecov', :require => false, :group => :test
 gem 'capybara'
 gem 'pg'
 gem 'rake'
