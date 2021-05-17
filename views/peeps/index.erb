@@ -1,3 +1,7 @@
+<% if @user %>
+<h1>Welcome, <%=@user.email.split('@')[0]%>!</h1>
+<%end%>
+
 <form action="/peeps" method="post">
   <label for="peep">
     What would you like to peep?

@@ -5,6 +5,6 @@ feature 'Registering a new user' do
     fill_in('email', with: 'acav@gmail.com')
     fill_in('password', with: 'password')
     click_button('Sign me up!')
-    expect(page).to have_content('Thanks for signing up, Acav')
+    expect(page).to have_content('Welcome, acav')
   end
 end

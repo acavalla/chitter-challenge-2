@@ -1,5 +1,5 @@
 require 'time'
-require 'database_connection'
+require_relative 'database_connection'
 
 class Peep
   attr_reader :time, :text, :id
