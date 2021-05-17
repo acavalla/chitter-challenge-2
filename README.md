@@ -1,6 +1,6 @@
-#chitter-challenge
+# chitter-challenge
 
-![language-ruby](https://img.shields.io/badge/language-ruby-red) ![version-2.7.2](https://img.shields.io/badge/version-2.7.2-yellow) ![build](https://travis-ci.com/acavalla/chitter-challenge-2.svg?branch=master) ![https://app.codecov.io/gh/acavalla/chitter-challenge-2](https://img.shields.io/codecov/c/github/acavalla/chitter-challenge-2.svg)
+![language-ruby](https://img.shields.io/badge/language-ruby-red) ![version-2.7.2](https://img.shields.io/badge/version-2.7.2-yellow) ![build](https://travis-ci.com/acavalla/chitter-challenge-2.svg?branch=master) ![[https://app.codecov.io/gh/acavalla/chitter-challenge-2]](https://img.shields.io/codecov/c/github/acavalla/chitter-challenge-2.svg)
 
 
 This is a small Twitter clone webapp.
