@@ -2,8 +2,8 @@
 
 source "https://rubygems.org"
 
-gem 'codecov', :require => false, :group => :test
 gem 'capybara'
+gem 'codecov', :require => false, :group => :test
 gem 'pg'
 gem 'rake'
 gem 'rspec'

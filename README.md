@@ -1,6 +1,6 @@
 # chitter-challenge
 
-![language-ruby](https://img.shields.io/badge/language-ruby-red) ![version-2.7.2](https://img.shields.io/badge/version-2.7.2-yellow) ![build](https://travis-ci.com/acavalla/chitter-challenge-2.svg?branch=master) 
+![language-ruby](https://img.shields.io/badge/language-ruby-red) ![version-2.7.2](https://img.shields.io/badge/version-2.7.2-yellow) ![build](https://travis-ci.com/acavalla/chitter-challenge-2.svg?branch=master)
 [![Codecov](https://codecov.io/github/acavalla/chitter-challenge-2/coverage.svg?branch=master)](https://codecov.io/github/acavalla/chitter-challenge-2?branch=master)
 
 
@@ -11,9 +11,10 @@ To run:
 2) Run `bundle install`
 3) Set up the databases with `rake setup`
 4) Run the test suite with `rspec`
-5) Run the app with `rackup config.ru` to write and delete Peeps
+5) Run the app with `rackup -p 3000` and visit `localhost:3000` in your browser to write and delete Peeps
 
-
+Domain model
+![Domain model](/assets/DomainModel.jpg)
 
 Aspects of the chitter challenge
 

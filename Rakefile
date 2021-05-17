@@ -7,7 +7,7 @@ task :setup do
 
   ['chitter', 'chitter_test'].each do |database|
     connection = PG.connect
-    connection.exec("CREATE DATABASE #{ database };")
+    connection.exec("CREATE DATABASE #{database};")
     connection = PG.connect(dbname: database)
     connection.exec("CREATE TABLE peeps(id SERIAL PRIMARY KEY, text VARCHAR(180) NOT NULL);")
     connection.exec("ALTER TABLE peeps ADD COLUMN created_at timestamp DEFAULT NOW();")

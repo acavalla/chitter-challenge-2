@@ -15,6 +15,7 @@ class User
 
   def self.find(id)
     return nil unless id
+
     result = DatabaseConnection.query("SELECT * FROM users WHERE id = '#{id}'").first
     new(id: result['id'],
         email: result['email'])
