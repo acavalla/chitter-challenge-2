@@ -1,6 +1,6 @@
 require 'pg'
 
-task default: %w[setup]
+# task default: %w[setup]
 
 task :setup do
   p "Creating databases..."
