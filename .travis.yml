@@ -7,5 +7,5 @@ before_script:
   - psql -U postgres -c 'CREATE DATABASE chitter_test;'
 
 script:
-  - bundle exec Rake::Task['setup']
+  - bundle exec Rake::Task[:setup]
   - bundle exec rspec
