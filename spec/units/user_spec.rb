@@ -28,4 +28,11 @@ describe User do
       expect(user2.email).to eq 'acav@gmail.com'
     end
   end
+
+  describe 'authenticate' do
+    it 'looks in the database for matching email' do
+      User.create(email: 'acav@gmail.com', password: 'password')
+      expect(User.authenticate(email: 'acav@gmail.com', password: 'password')).to be_a(User)
+    end
+  end
 end

@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gem 'bcrypt'
 gem 'capybara'
-gem 'codecov', :require => false, :group => :test
+# gem 'codecov', :require => false, :group => :test
 gem 'pg'
 gem 'rake'
 gem 'rspec'

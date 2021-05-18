@@ -22,4 +22,13 @@ class User
     new(id: result['id'],
         email: result['email'])
   end
+
+  def self.authenticate(email:, password:)
+    result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}';").first
+    return unless result
+    return unless BCrypt::Password.new(result['password']) == password
+
+    User.new(id: result['id'],
+             email: result['email'])
+  end
 end
