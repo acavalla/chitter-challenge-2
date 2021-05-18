@@ -30,12 +30,19 @@ describe User do
   end
 
   describe 'authenticate' do
-    it 'looks in the database for matching email' do
-      User.create(email: 'acav@gmail.com', password: 'password')
-      expect(User.authenticate(email: 'acav@gmail.com', password: 'password')).to be_a(User)
+    before(:each) do
+      User.create(email: 'acav@gmail.com', password: 'password9')
     end
 
-    it 'returns nil if no match' do
+    it 'returns a User if correct' do
+      expect(User.authenticate(email: 'acav@gmail.com', password: 'password9')).to be_a(User)
+    end
+
+    it 'returns nil if wrong email' do
+      expect(User.authenticate(email: 'acav@gnail.com', password: 'password9')).to be_nil
+    end
+
+    it 'returns nil if wrong password' do
       expect(User.authenticate(email: 'acav@gmail.com', password: 'pastaword')).to be_nil
     end
   end
