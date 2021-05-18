@@ -1,6 +1,8 @@
 <% if @user %>
 <h1>Welcome, <%=@user.email.split('@')[0]%>!</h1>
+<h4><a href='/session/new'> Sign out </h4>
 <%end%>
+
 
 <form action="/peeps" method="post">
   <label for="peep">
