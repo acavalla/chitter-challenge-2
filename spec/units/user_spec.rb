@@ -34,5 +34,9 @@ describe User do
       User.create(email: 'acav@gmail.com', password: 'password')
       expect(User.authenticate(email: 'acav@gmail.com', password: 'password')).to be_a(User)
     end
+
+    it 'returns nil if no match' do
+      expect(User.authenticate(email: 'acav@gmail.com', password: 'pastaword')).to be_nil
+    end
   end
 end
