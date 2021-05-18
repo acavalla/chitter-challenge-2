@@ -13,7 +13,6 @@ describe User do
 
     it 'encrypts the password' do
       expect(BCrypt::Password).to receive(:create).with('password')
-
       User.create(email:'acav@gmail.com', password: 'password')
     end
   end
@@ -22,6 +21,7 @@ describe User do
     it 'finds nil if no session id' do
       expect(User.find(nil)).to eq nil
     end
+
     it 'finds a user from their id' do
       user = User.create(email: 'acav@gmail.com', password: 'password')
       user2 = User.find(user.id)
@@ -35,7 +35,9 @@ describe User do
     end
 
     it 'returns a User if correct' do
-      expect(User.authenticate(email: 'acav@gmail.com', password: 'password9')).to be_a(User)
+      user = User.authenticate(email: 'acav@gmail.com', password: 'password9')
+      expect(user).to be_a(User)
+      expect(user.email).to eq 'acav@gmail.com'
     end
 
     it 'returns nil if wrong email' do
