@@ -2,8 +2,11 @@ require 'simplecov'
 require 'simplecov-console'
 
 ENV['ENVIRONMENT'] = 'test'
+ENV['CODECOV_TOKEN'] ='35039459-02ce-41b7-b0f1-413bb57cde1d'
 require 'rake'
 Rake.application.load_rakefile
+ENV['CI'] = 'true'
+ENV['TRAVIS'] = 'true'
 
 ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
