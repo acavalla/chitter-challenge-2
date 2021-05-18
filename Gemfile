@@ -12,6 +12,7 @@ gem 'simplecov'
 gem 'simplecov-console'
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-flash'
 gem 'timecop'
 
 group :development, :test do
