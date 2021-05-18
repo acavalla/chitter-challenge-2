@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem 'bcrypt'
 gem 'capybara'
 gem 'codecov', :require => false, :group => :test
 gem 'pg'

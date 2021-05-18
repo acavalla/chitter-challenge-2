@@ -10,6 +10,12 @@ describe User do
       expect(user).to be_a User
       expect(persisted_data['email']).to eq 'acav@gmail.com'
     end
+
+    it 'encrypts the password' do
+      expect(BCrypt::Password).to receive(:create).with('password')
+
+      User.create(email:'acav@gmail.com', password: 'password')
+    end
   end
 
   describe '.find' do
