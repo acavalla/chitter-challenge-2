@@ -11,6 +11,11 @@ describe User do
       expect(persisted_data['email']).to eq 'acav@gmail.com'
     end
 
+    it 'does not permit multiple signups with same email' do
+      user = User.create(email: 'acav@gmail.com', password: 'password')
+      expect(User.create(email: 'acav@gmail.com', password: 'password')).to be_nil
+    end
+
     it 'encrypts the password' do
       expect(BCrypt::Password).to receive(:create).with('password')
       User.create(email:'acav@gmail.com', password: 'password')
